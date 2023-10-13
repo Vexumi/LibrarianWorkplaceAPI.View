@@ -1,4 +1,4 @@
-import { BookModel } from "../Models/BookModel"
+import { BookModel } from "../../Models/BookModel"
 import { BsFillTrash3Fill } from "react-icons/bs"
 import { FaHammer } from "react-icons/fa"
 

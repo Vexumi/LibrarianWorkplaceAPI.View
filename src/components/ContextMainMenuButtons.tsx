@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import MainPageStore from "../stores/MainPageStore";
-import { ActionPagesEnum as APE } from "./ActionPagesEnum";
-import ButtonSelect from "./ButtonSelect";
+import { ActionPagesEnum as APE } from "./Small Parts/ActionPagesEnum";
+import ButtonSelect from "./Small Parts/ButtonSelect";
 
 const ContextMainMenuButtons = () => {
     if (MainPageStore.ContextMenuState === "readers") return (

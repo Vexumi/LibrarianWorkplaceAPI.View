@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../../css/forms.css'
-import FormProperty from '../Form-Property'
+import FormProperty from '../Small Parts/Form-Property'
 import RequestService from '../../services/api.request';
 import { BookPushModel } from '../../Models/BookPushModel';
 import MainPageStore from '../../stores/MainPageStore';

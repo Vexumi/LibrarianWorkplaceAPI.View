@@ -1,11 +1,13 @@
 import { makeAutoObservable } from "mobx";
-import { ActionPagesEnum } from "../components/ActionPagesEnum";
+import { ActionPagesEnum } from "../components/Small Parts/ActionPagesEnum";
 import { BookModel } from "../Models/BookModel";
+import RequestService from "../services/api.request";
 
 class MainPageStore {
     ContextMenuState = "";
     ActionPage: ActionPagesEnum | null = null;
     Books: BookModel[] = [];
+    AvailableBooks: BookModel[] = [];
     LibraryName: string = "Default Library Name";
     
     constructor() {
@@ -27,9 +29,27 @@ class MainPageStore {
         console.log(books)
     }
 
+    setAvailableBooks(books: BookModel[]){
+        this.AvailableBooks = books;
+        console.log("available books", books);
+    }
+
     getBooks(){
         return this.Books;
     }
+    
+    getAvailableBooks(){
+        return this.AvailableBooks;
+    }
+
+    update(){
+        switch (this.ActionPage){
+            case ActionPagesEnum.allBooks: RequestService.getAllBooks().then((res) => this.setBooks(res.data));
+            case ActionPagesEnum.availableBooks: RequestService.getAvailableBooks().then((res) => this.setAvailableBooks(res.data));
+        }
+        console.log("updated: ", this.ActionPage?.toString);
+    }
+
 }
 
 export default new MainPageStore()

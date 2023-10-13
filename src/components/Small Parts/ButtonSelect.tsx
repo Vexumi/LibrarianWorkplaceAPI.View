@@ -1,4 +1,4 @@
-import MainPageStore from "../stores/MainPageStore"
+import MainPageStore from "../../stores/MainPageStore"
 
 const ButtonSelect = (params: any) => {
     return (

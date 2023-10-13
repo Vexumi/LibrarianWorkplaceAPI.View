@@ -8,7 +8,11 @@ const RequestService = {
 
     addBook(bookPushModel: BookPushModel){
         return instance.post("/books", bookPushModel);
-    }
+    },
+
+    getAvailableBooks(){
+        return instance.get("/books/available");
+    },
 }
 
 export default RequestService

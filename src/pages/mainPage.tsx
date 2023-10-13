@@ -2,10 +2,9 @@ import ContextMainMenuButtons from "../components/ContextMainMenuButtons";
 import MainPageStore from "../stores/MainPageStore"
 import ActionPage from "../components/ActionPage";
 import RequestService from "../services/api.request";
-import { ActionPagesEnum } from "../components/ActionPagesEnum";
+import { ActionPagesEnum } from "../components/Small Parts/ActionPagesEnum";
 
 import '../css/main_page.css'
-import { observable } from "mobx";
 
 const MainPage = () => {
     function onBooksClick () {
@@ -19,7 +18,7 @@ const MainPage = () => {
             <div className="buttons-holder-main">
                 <button className="button-select" type="button" onClick={() => onBooksClick() }>Книги</button>
                 <button className="button-select" type="button" onClick={() => MainPageStore.setContextMenuState("readers")}>Пользователи</button>
-                <button className="button-select" type="button" onClick={() => RequestService.getAllBooks().then((res) => MainPageStore.setBooks(res.data))}>Обновить</button>
+                <button className="button-select" type="button" onClick={() => MainPageStore.update()}>Обновить</button>
             </div>
             <ContextMainMenuButtons />
             <ActionPage />
