@@ -13,6 +13,10 @@ const RequestService = {
     getAvailableBooks(){
         return instance.get("/books/available");
     },
+
+    getGivedBooks(){
+        return instance.get("/books/gived");
+    }
 }
 
 export default RequestService
