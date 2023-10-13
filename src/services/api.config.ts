@@ -3,7 +3,7 @@ import axios from "axios";
 export const instance = axios.create({
   // к запросу будет прикрепляться cookies
   //withCredentials: true,
-  baseURL: "http://localhost:5000/api", //port 7274 or 5000
+  baseURL: "https://localhost:7274/api", //port 7274 or 5000
 });
 
 

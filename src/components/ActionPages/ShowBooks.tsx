@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import { BookModel } from "../../Models/BookModel";
 import MainPageStore from "../../stores/MainPageStore";
 import { Book } from "../Small Parts/Book";
