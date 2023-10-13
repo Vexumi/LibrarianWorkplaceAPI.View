@@ -1,0 +1,2 @@
+# LibrarianWorkplaceAPI.View
+LibrarianWorkplace View
